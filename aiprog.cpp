@@ -29,6 +29,7 @@ public:
 
 
   AIPlayer(std::array<int,14> boardstate){
+    //sets up board,  tells AI it's north
     kalah = 13;
     board = boardstate;
   }
@@ -64,6 +65,7 @@ void legalmovefinder() {
 
   
   std::vector<int> legalmovefinder(std::array<int,14> hypo){
+    //override for use with prediction/future moves
     std::vector<int> nextMoves;
     for(int test = kalah - 6; test < kalah; test++) {
     if(board[test] > 0){
@@ -113,7 +115,8 @@ int assess(int move){
 
 
  int assess(int move, std::array<int,14> newboard ){
-  //assesses board position, returns an int reresenting move value
+  //assesses board position for any given board
+   //meant to be used to predict next moves
   int value = 0;
   std::vector<int> nextMoves;
   std::array<int,14> testBoard = newboard;
@@ -154,6 +157,7 @@ int assess(int move){
 int mover(){
   //drives the other methods, what you want to call to find a move
   std::vector<int>usefulholes;
+  //last variable is a relic of older version, may be removed in future
   int score = board[13];
   int playerscore = board[6];
   legalmovefinder();
@@ -163,6 +167,7 @@ int mover(){
     usefulholes.emplace(usefulholes.begin(), assess(usefulholes.back()));
     usefulholes.pop_back();
   }
+  //this returns the int representing the chosen hole
   return *std::max_element(usefulholes.begin(), usefulholes.end());
 }
 };    
