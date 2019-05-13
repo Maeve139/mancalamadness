@@ -35,17 +35,21 @@ public:
   }
 
 
-
+  void update(std::array<int,14> boardstate){
+    board = boardstate;
+    kalah = 13;
+  }
 
   void MOVE(std::array<int,14> &field, int move){
-  //got tired of doing moves manually
-  int counter = field[move];
-  for(int drops = 0; drops <= counter; drops++){
-    if(move+drops == kalah - 7){
-      //this just skips the opponents kalah
-      move++;
+    //got tired of doing moves manually
+    int counter = field[move];
+    field[move] = 0;
+    for(int drops = 1; drops <= counter; drops++){
+      if(move+drops == kalah - 7){
+	//this just skips the opponents kalah
+	move++;
     }
-    field[move+drops]++;
+    field[(move+drops)%14]++;
   }
 }
 
@@ -68,10 +72,11 @@ void legalmovefinder() {
     //override for use with prediction/future moves
     std::vector<int> nextMoves;
     for(int test = kalah - 6; test < kalah; test++) {
-    if(board[test] > 0){
+    if(hypo[test] > 0){
       nextMoves.push_back(test);
     }
   }
+    return nextMoves;
   }
 
 
@@ -83,17 +88,17 @@ int assess(int move){
   int value = 0;
   std::vector<int> nextMoves;
   std::array<int,14> testBoard = board;
-  int resulthole = (board[move]+move)%14;
+  int resulthole = ((board[move]+move)%14);
   if(move+board[move] > 13 || resulthole <= move){
     resulthole++;
     value++;
   }
   //still need to handle case where stones go around multiple times
-  if(resulthole = kalah) {
+  if(resulthole == kalah) {
     //assesses subsequent moves if lands in kalah
     value++;
     MOVE(testBoard, move);    
-    nextMoves = legalmovefinder(testBoard);
+    nextMoves = legalmovefinder(testBoard);  
     for(int testMove = 0; testMove < nextMoves.size(); testMove++){
       nextMoves.emplace(nextMoves.begin(), assess(nextMoves.back(), testBoard));
       nextMoves.pop_back();
@@ -126,7 +131,7 @@ int assess(int move){
     value++;
   }
   //still need to handle case where stones go around multiple times
-  if(resulthole = kalah) {
+  if(resulthole == kalah) {
     //assesses subsequent moves if lands in kalah
     value++;
     MOVE(testBoard, move);    
@@ -172,6 +177,14 @@ int mover(){
 }
 };    
 
+
+
+
+
 int main(){
-  //will eventually do something, maybe
+  std::array<int, 14> mytestboard;
+  mytestboard.fill(4);
+  AIPlayer *ai = new AIPlayer(mytestboard);
+  ai->update(mytestboard);
+  ai->mover();
 }
