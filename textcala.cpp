@@ -191,14 +191,14 @@ int main(){
 	  int ai_turn=0;
 	  bool blank=false;
 
-	  //for (int m=0; m<13; m++){//initializes board
-	//	  if (m!=6){
-	//		  A[m]=4; //fills each vec with four ints of 1
+	  for (int m=0; m<13; m++){//initializes board
+		  if (m!=6){
+			  A[m]=4; //fills each vec with four ints of 1
 	            //leaving the scoring trays empty
-	  //      }
-	   // }
-	  A[3]=2;
-	  A[12]=1;
+	        }
+	    }
+	  //A[3]=2;
+	  //A[12]=1;
 	int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
