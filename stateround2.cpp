@@ -196,26 +196,86 @@ int main(){
 	            //leaving the scoring trays empty
 	        }
 	    }
-	    
+	int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
 
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
-	cout<<"	| |   |				 |   | |"<<endl;
-	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
-	cout<<"	| |   |			  	 |   | |"<<endl;	
-	cout<<"	| -----  ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<") ----- |"<<endl;
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
 	cout<<"	|______________________________________|"<<endl;	
-
 	  AIPlayer *artificial = new AIPlayer(A);
  
-	 while (A[6]<24&&A[13]<24){
+	 while (A[6]<25&&A[13]<25){
 	    //checks that the score trays dont have over 24 stones captured(win condition)
-	    	cout<<"Pick a bucket to move stones from!"<<endl;
-	        char input;
-	    	cin>>input;
-
-//cin doesnt work rn
+	    	cout<<"Pick a bucket to move stones from"<<endl;
+	        string in;
+	    	cin>>in;
+		if (in.size()>1){
+		    cout<<"Please only enter a single number or character  as input"<<endl;
+		    continue;
+		}
+		char input=in[0];
 	        player_turn++;
 
 	        if (input=='R'||input=='r'){ //restarts
@@ -274,16 +334,76 @@ int main(){
 	            if ((play+counter)%14==6){
 
 	            	cout<<"Player gets another turn!"<<endl;
-			cout<<"	_______________________________________"<<endl;
-			cout<<"	|  AI	 		           P   |"<<endl;
-			cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
-			cout<<"	| |   |				 |   | |"<<endl;
-			cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
-			cout<<"	| |   |			  	 |   | |"<<endl;	
-			cout<<"	| -----  ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<") ----- |"<<endl;
-			cout<<"	|______________________________________|"<<endl;	
+			    int space=8; 
+	cout<<"	_______________________________________"<<endl;
+	cout<<"	|  AI	 		           P   |"<<endl;
 
-	            	//last stone went in score tray so player gets another turn
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	|______________________________________|"<<endl;	
+
+		            	//last stone went in score tray so player gets another turn
 	            	continue;
 	            }
 	            if ((((play+counter)%14)>-1)&&(((play+counter)%14)<6)){ //if turn ends in own side
@@ -300,16 +420,77 @@ int main(){
 	            }
 
 			//prints out current board state for testing
+		    int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
-	cout<<"	| |   |				 |   | |"<<endl;
-	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
-	cout<<"	| |   |			  	 |   | |"<<endl;	
-	cout<<"	| -----  ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<") ----- |"<<endl;
+
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
 	cout<<"	|______________________________________|"<<endl;	
 
-	    }
+
+		    }
 	     
 	        if ((A[7]==0&&A[8]==0&&A[9]==0&&A[10]==0&&A[11]==0&&A[12]==0)){
 	        	        //if no stones on ai side, add player stones to their score and exit
@@ -324,7 +505,7 @@ int main(){
 	        	        	A[5]=0;
 	        	        	for (int l=0; l<stone; l++){
 	        	        		//return board graphic from maeve
-	        	        		A[13]++;
+	        	        		A[6]++;
 	        	        	}
 	        	        blank=true;
 	        	        break; //leaves loop bc we have a win
@@ -356,15 +537,77 @@ int main(){
             	}
      }
             if ((ai+count)%14==13){
-
-            			cout<<"	_______________________________________"<<endl;
+int space=8; 
+	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
-	cout<<"	| |   |				 |   | |"<<endl;
-	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
-	cout<<"	| |   |			  	 |   | |"<<endl;	
-	cout<<"	| -----  ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<") ----- |"<<endl;
+
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
 	cout<<"	|______________________________________|"<<endl;	
+
+
+            		
 		//last stone went in score tray so ai gets another turn
  	cout<<"AI gets another turn!"<<endl;
            
@@ -401,16 +644,77 @@ int main(){
            	        }
      
             //prints out current board state for testing
+	    int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
-	cout<<"	| |   |				 |   | |"<<endl;
-	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
-	cout<<"	| |   |			  	 |   | |"<<endl;	
-	cout<<"	| -----  ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<") ----- |"<<endl;
+
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
 	cout<<"	|______________________________________|"<<endl;	
 
-	    } //end of turns while loop
+
+	  	    } //end of turns while loop
 //Now we are at a win state
 if  (blank==false){
 	//moves stones left in each side to their scoring trays
@@ -436,17 +740,17 @@ if  (blank==false){
 cout<<"Player: "<<A[6]<<endl;
 cout<<"AI: "<<A[13]<<endl;
 if (A[6]>A[13]){
-	cout<<"player wins"<<endl;
+	cout<<"Player wins!"<<endl;
 }
 
 if (A[6]==A[13]){
 
-cout<<"tied game"<<endl;
+cout<<"Tied game!"<<endl;
 }
 if(A[13]>A[6]) {
-	cout<<"ai wins"<<endl;
+	cout<<"AI wins!"<<endl;
 }
-cout<<"ends program"<<endl;
+cout<<"Game Quits"<<endl;
 	  return 0;
 }
 
