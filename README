@@ -5,17 +5,17 @@
 TextCala is our text-based version of Mancala: textcala.cpp is what is used to run the code and the Makefile is used to compile it.
 
 SharpCala is our Unity-based version with two scripts:
-Script.cs is the state machine, user input, and graphic user interface
-Ai.cs is the ai that reads the board and returns the best move it finds.
+Script.cs is the state machine, user input, and graphic user interface.
+AI.cs is the ai that reads the board and returns the best move it finds.
+Mancala 2D.zip is the Unity file for SharpCala.
 
 Together with some details in the unity engine, it makes a running Mancala Simulator.
-
-
 
 
 Vestigial Code:
 
 ClickTracker.cpp and ClickTracker.h were to get user input in the graphics.h/Eclipse version of our code but was abandonned when we stopped using Eclipse.
-
-
+state.cpp is the base for the state controller code which was changed slightly than implemented into TextCala and SharpCala.
+aiprog.cpp is the base for the AI code which was implemented into TextCala and SharpCala.
+finalproj is a folder containing the work for an SDL graphics version which was not completed at the time of our presentation.
 
