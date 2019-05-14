@@ -63,10 +63,9 @@ void legalmovefinder() {
       moves.push_back(test);
     }
   }
-  if(moves.empty()){
-    moves.push_back(0);
-  }
+  
 }
+
 
 
   std::vector<int> legalmovefinder(std::array<int,14> hypo){
@@ -76,7 +75,10 @@ void legalmovefinder() {
     if(hypo[test] > 0){
       nextMoves.push_back(test);
     }
-  }
+    }
+    if(moves.empty()){
+      moves.push_back(0);
+    }
     return nextMoves;
   }
 
