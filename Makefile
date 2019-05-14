@@ -3,7 +3,7 @@
 all: mancala
 
 
-mancala: stateround2.cpp
+mancala: textcala.cpp
 	g++ -o state textcala.cpp -std=c++11
 
 clean:
