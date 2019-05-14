@@ -1,0 +1,21 @@
+# mancalamadness
+# Authors: Scott, Sam C. Maeve G. Ben S
+
+
+TextCala is our text-based version of Mancala: textcala.cpp is what is used to run the code and the Makefile is used to compile it.
+
+SharpCala is our Unity-based version with two scripts:
+Script.cs is the state machine, user input, and graphic user interface
+Ai.cs is the ai that reads the board and returns the best move it finds.
+
+Together with some details in the unity engine, it makes a running Mancala Simulator.
+
+
+
+
+Vestigial Code:
+
+ClickTracker.cpp and ClickTracker.h were to get user input in the graphics.h/Eclipse version of our code but was abandonned when we stopped using Eclipse.
+
+
+
