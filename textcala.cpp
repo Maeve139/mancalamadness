@@ -76,8 +76,8 @@ void legalmovefinder() {
       nextMoves.push_back(test);
     }
     }
-    if(moves.empty()){
-      moves.push_back(0);
+    if(nextMoves.empty()){
+      nextMoves.push_back(0);
     }
     return nextMoves;
   }
@@ -203,8 +203,6 @@ int main(){
 	            //leaving the scoring trays empty
 	        }
 	    }
-	  //A[3]=2;
-	  //A[12]=1;
 	int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
@@ -526,13 +524,8 @@ int main(){
 
 	        ai_repeat:
 			 cout<<"AI's turn"<<endl;
-		/*for (int j=0; j<14; j++){
-	  	  	  cout<<A[j]<< ",  ";
-  	  	  }
-	   cout<<endl;
-	       */ 
 	 if (A[7]+A[8]+A[9]+A[10]+A[11]+A[12]==0){
-		cout<<"No possible moves for /AI"<<endl;
+		cout<<"No possible moves for AI"<<endl;
 		break;
 	    }
 
