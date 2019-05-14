@@ -4,8 +4,8 @@ all: mancala
 
 
 mancala: textcala.cpp
-	g++ -o state textcala.cpp -std=c++11
+	g++ -o textcala textcala.cpp -std=c++11
 
 clean:
-	rm -f state *.o
+	rm -f textcala *.o
 
