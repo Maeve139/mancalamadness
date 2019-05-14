@@ -1,3 +1,4 @@
+
 /*
 *  State controller for Mancala
 *  Created on: Apr 21, 2019
@@ -61,6 +62,9 @@ void legalmovefinder() {
     if(board[test] > 0){
       moves.push_back(test);
     }
+  }
+  if(moves.empty()){
+    moves.push_back(0);
   }
 }
 
@@ -833,4 +837,3 @@ if(A[13]>A[6]) {
 cout<<"Game Quits"<<endl;
 	  return 0;
 }
-
