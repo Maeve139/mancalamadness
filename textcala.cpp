@@ -1,3 +1,4 @@
+
 /*
 *  State controller for Mancala
 *  Created on: Apr 21, 2019
@@ -61,6 +62,9 @@ void legalmovefinder() {
     if(board[test] > 0){
       moves.push_back(test);
     }
+  }
+  if(moves.empty()){
+    moves.push_back(0);
   }
 }
 
@@ -191,14 +195,14 @@ int main(){
 	  int ai_turn=0;
 	  bool blank=false;
 
-	  //for (int m=0; m<13; m++){//initializes board
-	//	  if (m!=6){
-	//		  A[m]=4; //fills each vec with four ints of 1
+	  for (int m=0; m<13; m++){//initializes board
+		  if (m!=6){
+			  A[m]=4; //fills each vec with four ints of 1
 	            //leaving the scoring trays empty
-	  //      }
-	   // }
-	  A[3]=2;
-	  A[12]=1;
+	        }
+	    }
+	  //A[3]=2;
+	  //A[12]=1;
 	int space=8; 
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
@@ -833,4 +837,3 @@ if(A[13]>A[6]) {
 cout<<"Game Quits"<<endl;
 	  return 0;
 }
-
