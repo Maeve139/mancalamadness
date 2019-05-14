@@ -180,6 +180,7 @@ int main(){
 	cout<<endl;
 	cout<<"Welcome to Mancala! Win by scoring more stones than your opponent."<<endl;
 	cout<<"Play until your opponent has no moves left or you have over 24 stones in your score tray."<<endl;
+	cout<<"During your turn pick a number from  1-6 to choose the corresponding bucket to move stones from."<<endl;
 	cout<<"Capture opponents stones by ending your turn in an empty bucket, which capture the stones in the opposite bucket."<<endl;
 	cout<<"Gain another turn by ending your turn in your scoring tray."<<endl;
 	cout<<"Type 'Q' to quit and 'R' to restart. "<<endl;
@@ -199,7 +200,7 @@ int main(){
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
 
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ----- |"<<endl;
+	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
 	cout<<"	| |   |				 |   | |"<<endl;
 	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
 	cout<<"	| |   |			  	 |   | |"<<endl;	
@@ -215,7 +216,6 @@ int main(){
 	    	cin>>input;
 
 //cin doesnt work rn
-	       // cout<<"Player picks:"<<input<<endl;
 	        player_turn++;
 
 	        if (input=='R'||input=='r'){ //restarts
@@ -237,7 +237,6 @@ int main(){
 	        }
 
 		int play=input-49;
-	        cout<<"play array is "<<play<<endl;
 		if (play>6){
 	       	            //error message
 	        	cout<<"Please pick bucket on your side!"<<endl;
@@ -277,7 +276,7 @@ int main(){
 	            	cout<<"Player gets another turn!"<<endl;
 			cout<<"	_______________________________________"<<endl;
 			cout<<"	|  AI	 		           P   |"<<endl;
-			cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ----- |"<<endl;
+			cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
 			cout<<"	| |   |				 |   | |"<<endl;
 			cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
 			cout<<"	| |   |			  	 |   | |"<<endl;	
@@ -303,7 +302,7 @@ int main(){
 			//prints out current board state for testing
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ----- |"<<endl;
+	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
 	cout<<"	| |   |				 |   | |"<<endl;
 	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
 	cout<<"	| |   |			  	 |   | |"<<endl;	
@@ -341,10 +340,9 @@ int main(){
    		artificial->update(A);
   		int ai=artificial->mover();
  		 
-		cout<<"ai has picked "<<ai<<endl;
+		cout<<"AI has picked "<<ai<<endl;
 	        //this assumes ai will return an int from 7-12 that doesnt have 0  stones
 	        ai_turn++;
-
 	        int count=A[ai];
             	A[ai]=0;
             for (int c=1; c<count+1; c++){
@@ -361,7 +359,7 @@ int main(){
 
             			cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ----- |"<<endl;
+	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
 	cout<<"	| |   |				 |   | |"<<endl;
 	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
 	cout<<"	| |   |			  	 |   | |"<<endl;	
@@ -405,7 +403,7 @@ int main(){
             //prints out current board state for testing
 	cout<<"	_______________________________________"<<endl;
 	cout<<"	|  AI	 		           P   |"<<endl;
-	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ----- |"<<endl;
+	cout<<"	| -----  ("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<") ----- |"<<endl;
 	cout<<"	| |   |				 |   | |"<<endl;
 	cout<<"	| | "<<A[13]<<" |                		 | "<<A[6]<<" | |"<<endl;
 	cout<<"	| |   |			  	 |   | |"<<endl;	
