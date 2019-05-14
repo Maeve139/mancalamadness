@@ -1,0 +1,57 @@
+#include <graphics.h>
+#include <cstdlib>
+#include <string>
+
+initgraph(9, 2, "");
+
+//draw first row of circles
+circle(160, 64, 27);
+circle(244, 64, 27);
+circle(288, 64, 27);
+circle(352, 64, 27);
+circle(416, 64, 27);
+circle(480, 64, 27);
+
+//draw second row of circles
+circle(160, 128, 27);
+circle(224, 128, 27);
+circle(288, 128, 27);
+circle(352, 128, 27);
+circle(416, 128, 27);
+circle(480, 128, 27);
+
+//draw computer scoring rectangle
+rectangle(32, 32, 128, 160);
+
+//draw player scoring rectangle
+rectangle(512, 32, 608, 160);
+
+//String construction for computer and player scores, turn state, and instructions
+@TODO: replace the names of computer and player score variables with their actual names.
+//The placeholder values are called "computerscore" and "playerscore".
+//Their string versions are called "compscore" and "playscore", so if either of these names
+//are already used, please replace my variable names where they occur.
+
+std::string compscore;
+std::stringstream ss;
+ss<<computerscore;
+compscore == ss.str();
+std::string compscorestate = "COMPUTER SCORE: " + compscore;
+
+std::string playscore;
+ss<<playscore;
+playscore == ss.str();
+std::string playscorestate = "PLAYER SCORE: " + playscore;
+
+std::string = turnstate + "'S TURN";
+
+std::string instructions = "Mancala is a two-player game in which the goal is to capture more stones than your opponent. To move stones, select one pocket on your side of the board. The stones from the pocket will be distributed sequentially counterclockwise, starting at the pocket after your selection. \n To score, deposit stones in your scoring pocket ot end your turn in an empty pocket across from your opponents' stones to capture them.";
+
+//Printing and formatting instructions for computer and player scores, turn state, and instructions
+settextstyle(0, 0, 2);
+outtextxy(32, 192, compscorestate);
+outtextxy(178, 192, turnstate);
+outtextxy(326, 192, playscorestate);
+
+settextstyle(0, 0, 0);
+outtextxy(32, 224, instructions);
