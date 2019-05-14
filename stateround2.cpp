@@ -297,7 +297,7 @@ int main(){
 	        }
 
 		int play=input-49;
-		if (play>6){
+		if (play>5){
 	       	            //error message
 	        	cout<<"Please pick bucket on your side!"<<endl;
 	       	            //break;
@@ -627,6 +627,74 @@ int space=8;
             }
             //checks if one side of board is empty
             if ((A[0]==0&&A[1]==0&&A[2]==0&&A[3]==0&&A[4]==0&&A[5]==0)){
+		 int space=8; 
+	cout<<"	_______________________________________"<<endl;
+	cout<<"	|  AI	 		           P   |"<<endl;
+
+	cout<<"	|	("<<A[12]<<") ("<<A[11]<<") ("<<A[10]<<") ("<<A[9]<<") ("<<A[8]<<") ("<<A[7]<<")";
+	if(A[12]>9){
+	    space--;    
+	}
+	if(A[11]>9){
+	    space--;    
+	}
+	if(A[10]>9){
+	    space--;    
+	}
+	if(A[9]>9){
+	    space--;    
+	}
+	if(A[8]>9){
+	    space--;    
+	}
+	if(A[7]>9){
+	    space--;    
+	}
+	for (int m=0; m<space;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	| _____				 _____ |"<<endl;
+	cout<<"	| |   |				 |   | |"<<endl; 
+	if (A[13]>9){
+	  cout<<"	| |"<<A[13]<<" |                		 |";  
+	}
+	else{
+	 cout<<"	| | "<<A[13]<<" |                		 |"; 
+	}
+	if (A[6]>9){
+		cout<<A[6]<<" | |"<<endl;
+	}
+	else{
+	    cout<<" "<<A[6]<<" | |"<<endl;
+	}
+	cout<<"	| |   |			  	 |   | |"<<endl;
+	cout<<"	| -----				 ----- |"<<endl; 
+	cout<<"	|       ("<<A[0]<<") ("<<A[1]<<") ("<<A[2]<<") ("<<A[3]<<") ("<<A[4]<<") ("<<A[5]<<")";
+	int sp=8;
+	if(A[0]>9){
+	    sp--;    
+	}
+	if(A[1]>9){
+	    sp--;    
+	}
+	if(A[2]>9){
+	    sp--;    
+	}
+	if(A[3]>9){
+	    sp--;    
+	}
+	if(A[4]>9){
+	    sp--;    
+	}
+	if(A[5]>9){
+	    sp--;    
+	}
+	for (int m=0; m<sp;m++){
+	    cout<<" ";
+	}
+	cout<<"|"<<endl;
+	cout<<"	|______________________________________|"<<endl;	
             	cout<<"No moves possible for Player"<<endl;
            	        //if no stones on player side,  add ai stones to their score and exit
            	        	int stone=A[7]+A[8]+A[9]+A[10]+A[11]+A[12];
