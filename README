@@ -15,7 +15,7 @@ Together with some details in the unity engine, it makes a running Mancala Simul
 Vestigial Code:
 Within the Vestigial folder we have old and incomplete code which is kept to show our progress and future goals
 
-ClickTracker.cpp and ClickTracker.h were to get user input in the graphics.h/Eclipse version of our code but was abandonned when we stopped using Eclipse.
+ClickTracker.cpp and ClickTracker.h were to get user input in the graphics.h/Eclipse version of our code but was abandoned when we stopped using Eclipse.
 state.cpp is the base for the state controller code which was changed slightly than implemented into TextCala and SharpCala.
 aiprog.cpp is the base for the AI code which was implemented into TextCala and SharpCala.
 finalproj is a folder containing the work for an SDL graphics version which was not completed at the time of our presentation.
